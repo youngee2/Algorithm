@@ -37,11 +37,7 @@ public class Main {
 				System.out.println(stack.empty() ? 1 : 0);
 				break;
 			case "top": // 스택의 가장 위에 있는 정수룰 츨력. 정수가 없는 경우에 -1출력.
-				if(stack.empty()==false) {
-					System.out.println(stack.empty() == false ? stack.peek() : Integer.valueOf(-1));
-				}else {
-					System.out.println(-1);
-				}
+				System.out.println(stack.empty() == false ? stack.peek() : Integer.valueOf(-1));
 				break;
 			}
 		}
