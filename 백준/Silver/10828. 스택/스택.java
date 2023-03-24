@@ -23,7 +23,7 @@ public class Main {
 			// 만약 push가 아닌 경우 입력받는 문자열을 switch문을 활용해 비교하여
 			// 같은 문자열을 찾으면 해당하는 명령을 처리하게 한다.
 			case "pop": // 스택에서 가장 위에 있는 정수를 빼고, 그 수를 출력. 스택에 정수가 없는 경우 -1 출력.
-				if (stack.empty() == false) { // 만약 스택이 비어있지 않을 경우에
+				if (!stack.empty()) { // 만약 스택이 비어있지 않을 경우에
 					m = stack.pop(); // stack.pop으로 스택에서 가장 위에 있는 정수를 빼고 그 수를 m변수에 대입한다.
 					System.out.println(m); // m변수 출력.
 				} else {
@@ -37,10 +37,13 @@ public class Main {
 				System.out.println(stack.empty() ? 1 : 0);
 				break;
 			case "top": // 스택의 가장 위에 있는 정수룰 츨력. 정수가 없는 경우에 -1출력.
-				System.out.println(stack.empty() == false ? stack.peek() : Integer.valueOf(-1));
-				break;
+					System.out.println(!stack.empty() ? stack.peek() : Integer.valueOf(-1));
+					//삼항 연산자에서 반환하는 값의 타입이 일치해야한다!. 일치하지 않으면 컴파일 에러가 발생.
+					//처음에 Integer.valueOf(-1)말고 -1로 작성했더니 컴파일 오류가 났다.
+					// 이유는 empty()와 peek()메서드는 boolean 타입을 반환하는데 -1은 int타입이기 때문.
+					break;
+				}
 			}
-		}
 
-	}
+		}
 }
