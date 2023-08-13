@@ -8,6 +8,6 @@ class Solution {
 				f1 = f;
 			}
 		}
-        return f%1234567;
+        return f;
     }
 }
