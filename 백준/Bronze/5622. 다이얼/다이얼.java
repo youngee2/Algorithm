@@ -3,57 +3,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-	// switch문을 잘 안써서 사용해봤다. 가독성이 좋지만 코드가 너무 길어진다.
+	// switch문은 가독성이 좋지만 코드가 너무 길어진다.
+	// 배열을 사용하면 비교적 코드가 짧아지며, 모든 문자를 비교할 필요없이 인덱스로 해당 값을 바로 조회할 수 있다.
+	// 아래 코드는 알파벳별로 걸리는 시간을 정의한 배열을 사용하여, 아스키코드로 해당 배열인덱스를 구해봤다.
+
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String word = br.readLine();
+		int[] dial = { 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 10, 10, 10, 10 };
 		int sum = 0;
-		int i = word.length();
-		while (i-- > 0) {
-			switch (word.charAt(i)) {
-			case 'A':
-			case 'B':
-			case 'C':
-				sum += 3;
-				break;
-			case 'D':
-			case 'E':
-			case 'F':
-				sum += 4;
-				break;
-			case 'G':
-			case 'H':
-			case 'I':
-				sum += 5;
-				break;
-			case 'J':
-			case 'K':
-			case 'L':
-				sum += 6;
-				break;
-			case 'M':
-			case 'N':
-			case 'O':
-				sum += 7;
-				break;
-			case 'P':
-			case 'Q':
-			case 'R':
-			case 'S':
-				sum += 8;
-				break;
-			case 'T':
-			case 'U':
-			case 'V':
-				sum += 9;
-				break;
-			case 'W':
-			case 'X':
-			case 'Y':
-			case 'Z':
-				sum += 10;
-				break;
-			}
+		String word = br.readLine();
+
+		for (int i = 0; i < word.length(); i++) {
+			sum += dial[word.charAt(i) - 65];
 		}
 
 		System.out.println(sum);
