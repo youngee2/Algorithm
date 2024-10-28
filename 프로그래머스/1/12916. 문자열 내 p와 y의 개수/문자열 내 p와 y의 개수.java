@@ -3,7 +3,7 @@ class Solution {
         boolean answer=false;
         String str = s.toUpperCase();
         int count=0, count2=0;
-        System.out.println(str);
+
         for(int i=0; i<str.length(); i++){
             if(str.charAt(i)=='P'){
                 count++;
