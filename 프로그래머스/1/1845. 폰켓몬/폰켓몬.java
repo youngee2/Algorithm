@@ -1,20 +1,18 @@
 import java.util.*;
-
 class Solution {
     public int solution(int[] nums) {
-        int answer = 0;
-        HashSet<Integer> pokemon = new HashSet<>();
+        HashSet<Integer> set = new HashSet<>();
         
         for(int x:nums){
-            pokemon.add(x);
+            set.add(x);
+        }
+       
+        int answer=set.size();
+        
+        if(answer>nums.length/2){
+            answer=nums.length/2;
         }
         
-        if((nums.length/2)<pokemon.size()){
-            answer=nums.length/2;
-        }else{
-            answer=pokemon.size();
-        }
-
         return answer;
     }
 }
