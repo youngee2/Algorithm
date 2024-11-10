@@ -7,11 +7,6 @@ public class Main {
         bw.newLine();
     }
 
-    private static void printWrite(BufferedWriter bw, String value) throws IOException {
-        bw.write(value);
-        bw.newLine();
-    }
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -67,9 +62,11 @@ public class Main {
                     }
                     break;
             }
+
         }
         bw.flush();
         bw.close();
         br.close();
+
     }
 }
