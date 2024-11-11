@@ -2,21 +2,23 @@ import java.util.*;
 
 public class Solution {
     public int[] solution(int []arr) {
-     Stack<Integer> answer = new Stack<>();
-     
-        answer.push(arr[0]);
+     Queue<Integer> list = new LinkedList<>();
+        
+        int last = arr[0];
+        list.offer(last);
+        
         for(int i=1; i<arr.length; i++){
-            if(answer.peek()!=arr[i]){
-                answer.push(arr[i]);
+            if(last!=arr[i]){
+                last=arr[i];
+                list.offer(last);
             }
         }
         
-        int[] list = new int[answer.size()];
-        Collections.reverse(answer);
-        for(int i=0;i<list.length; i++){
-            list[i]=answer.pop();
+        int[] answer = new int[list.size()];
+        
+        for(int i=0; i<answer.length; i++){
+            answer[i]=list.poll();
         }
-        return list;
- 
+        return answer;
     }
 }
