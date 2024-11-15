@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
     Deque<Integer> list = new LinkedList<>();
     int max_waiting = 0;
-    int waiting_student_num=Integer.MAX_VALUE;
+    int waiting_student_num=0;
 
     public void addData(int value) {
         list.offer(value);
