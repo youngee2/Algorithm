@@ -22,7 +22,7 @@ class Solution {
         }
         
         //하샤드 수인지 확인
-        //만약 x의 자릿수의 합인 sum이 x로 나누어 떨어지면 answer를 true 변환.
+        // x가 x의 자리 수 합인 sum으로 나누어떨어지면 하샤드 수이므로 answer를 true
           if(x%sum==0){ 
                 answer=true;
             }
